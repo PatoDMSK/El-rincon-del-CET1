@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - El Rincón del CET 1</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="backgrounds.css">
+    <link rel="stylesheet" href="login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login-page">
+        <a href="index.html" class="back-home">
+            ← Volver al Inicio
+        </a>
+        
+        <div class="login-container">
+            <div class="login-logo">
+                <div class="logo-icon">🎓</div>
+                <h1>El Rincón del CET 1</h1>
+            </div>
+            
+            <form class="login-form" id="loginForm">
+                <div class="form-group">
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" required placeholder="Tu contraseña">
+                </div>
+                
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox" id="remember" name="remember">
+                        <span>Recordarme</span>
+                    </label>
+                    <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                </div>
+                
+                <button type="submit" class="login-submit">
+                    Iniciar Sesión
+                </button>
+            </form>
+            
+            <div class="divider">
+                <span>o continúa con</span>
+            </div>
+            
+            <div class="social-login">
+                <a href="#" class="social-btn">
+                    <span>📧</span>
+                    Google
+                </a>
+                <a href="#" class="social-btn">
+                    <span>📘</span>
+                    Facebook
+                </a>
+            </div>
+            
+            <div class="register-link">
+                ¿No tienes una cuenta? <a href="register.html">Regístrate aquí</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos a Realizar - El Rincón del CET 1</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="backgrounds.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .projects-wrapper { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+        .task-input { display:flex; gap:.5rem; margin-bottom:1rem; }
+        .task-input input { flex:1; padding:.75rem; border:2px solid #e8f4fd; border-radius:10px; }
+        .task-list { display:flex; flex-direction:column; gap:.5rem; }
+        .task-item { display:flex; align-items:center; gap:.5rem; background:rgba(255,255,255,.95); border:1px solid #e8f4fd; border-radius:12px; padding:.75rem; }
+        .task-item.completed { opacity:.7; text-decoration: line-through; }
+        .task-meta { margin-left:auto; display:flex; align-items:center; gap:.5rem; color:#6c757d; font-size:.85rem; }
+        .empty { color:#6c757d; text-align:center; margin-top:1rem; }
+    </style>
+</head>
+<body>
+    <div class="projects-wrapper">
+        <a href="index.html" class="btn-secondary" style="text-decoration:none; padding:.5rem .75rem; display:inline-block;">← Volver</a>
+        <h2 style="margin-top:1rem;">Proyectos a Realizar</h2>
+        <div class="task-input">
+            <input id="taskTitle" type="text" placeholder="Nueva tarea o trabajo práctico...">
+            <button class="btn-primary" id="addTask">Agregar</button>
+        </div>
+        <div class="task-list" id="taskList"></div>
+        <div class="empty" id="emptyText" style="display:none;">No hay tareas. ¡Agrega la primera!</div>
+    </div>
+    <script src="projects.js"></script>
+</body>
+</html>
+
+

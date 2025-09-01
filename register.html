@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse - El Rincón del CET 1</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="backgrounds.css">
+    <link rel="stylesheet" href="login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login-page">
+        <a href="login.html" class="back-home">← Volver a Iniciar Sesión</a>
+        <div class="login-container">
+            <div class="login-logo">
+                <div class="logo-icon">🎓</div>
+                <h1>Crear Cuenta</h1>
+            </div>
+            <form class="login-form" id="registerForm">
+                <div class="form-group">
+                    <label for="name">Nombre Completo</label>
+                    <input type="text" id="name" name="name" required placeholder="Tu nombre">
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" required placeholder="Mínimo 6 caracteres">
+                </div>
+                <div class="form-group">
+                    <label for="confirm">Confirmar Contraseña</label>
+                    <input type="password" id="confirm" name="confirm" required placeholder="Repite tu contraseña">
+                </div>
+                <button type="submit" class="login-submit">Crear cuenta</button>
+            </form>
+            <div class="register-link">
+                ¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a>
+            </div>
+        </div>
+    </div>
+    <script src="register.js"></script>
+</body>
+</html>
+
+

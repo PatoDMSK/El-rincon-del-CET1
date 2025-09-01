@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rincón de chismes - El Rincón del CET 1</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="backgrounds.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .gossip-wrapper { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
+        .gossip-editor { background: rgba(255,255,255,.95); border:1px solid #e8f4fd; border-radius:16px; padding:1rem; margin-bottom:1rem; }
+        .gossip-editor textarea { width:100%; border:2px solid #e8f4fd; border-radius:12px; padding:.75rem; min-height:100px; resize: vertical; }
+        .gossip-editor .row { display:flex; gap:.5rem; align-items:center; margin-top:.5rem; }
+        .gossip-feed { display:flex; flex-direction:column; gap:1rem; }
+        .gossip-card { background: rgba(255,255,255,.95); border:1px solid #e8f4fd; border-radius:16px; padding:1rem; }
+        .gossip-meta { color:#6c757d; font-size:.85rem; margin-bottom:.5rem; display:flex; gap:.5rem; align-items:center; }
+        .gossip-actions { display:flex; gap:.5rem; margin-top:.5rem; }
+        .reactions .emoji-btn { background:#ffffff; border:1px solid #e8f4fd; border-radius:999px; padding:.35rem .6rem; cursor:pointer; box-shadow:0 4px 12px rgba(0,0,0,0.06); transition:transform .15s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease; }
+        .reactions .emoji-btn:hover { transform: translateY(-2px); box-shadow:0 8px 18px rgba(0,0,0,0.08); background:#f8f9ff; }
+        .reactions .emoji-btn.reacted { background:linear-gradient(135deg, #f0f7ff 0%, #e8f4fd 100%); border-color:#667eea; box-shadow:0 8px 22px rgba(102,126,234,0.18); }
+        .reactions .emoji-count { font-weight:600; color:#2c3e50; margin-left:.25rem; }
+        @keyframes pop { 0%{transform:scale(1)} 50%{transform:scale(1.15)} 100%{transform:scale(1)} }
+        .reactions .emoji-btn.pop { animation: pop .25s ease; }
+        .comment-box { display:flex; gap:.5rem; margin-top:.5rem; }
+        .comment-box input { flex:1; padding:.5rem; border:2px solid #e8f4fd; border-radius:10px; }
+        .comments { margin-top:.5rem; display:flex; flex-direction:column; gap:.35rem; }
+        .comment { background:#f8f9ff; border:1px solid #e8f4fd; border-radius:10px; padding:.5rem .75rem; }
+        .empty { color:#6c757d; text-align:center; margin-top:1rem; }
+        .anon-note { color:#e67e22; font-size:.85rem; }
+    </style>
+</head>
+<body>
+    <div class="gossip-wrapper">
+        <a href="index.html" class="btn-secondary" style="text-decoration:none; padding:.5rem .75rem; display:inline-block;">← Volver</a>
+        <h2 style="margin-top:1rem;">Rincón de chismes</h2>
+        <p class="anon-note">Nota: Las publicaciones y reacciones se sincronizan por navegador (modo demo). Para multiusuario real se necesita backend.</p>
+
+        <div class="gossip-editor">
+            <textarea id="gossipText" placeholder="Publica tu chisme (sé respetuoso y evita datos sensibles)..."></textarea>
+            <div class="row">
+                <button class="btn-primary" id="publishBtn">Publicar</button>
+                <span id="charCount" style="color:#6c757d; font-size:.9rem;">0/300</span>
+            </div>
+        </div>
+
+        <div id="gossipFeed" class="gossip-feed"></div>
+        <div id="emptyFeed" class="empty" style="display:none;">Aún no hay chismes. ¡Sé el primero en publicar!</div>
+    </div>
+
+    <script src="gossip.js"></script>
+</body>
+</html>
+
+

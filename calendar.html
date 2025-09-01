@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario - El Rincón del CET 1</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="backgrounds.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .calendar-wrapper { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
+        .calendar-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:1rem; }
+        .calendar-header h2 { margin:0; }
+        .calendar-controls { display:flex; gap:.5rem; }
+        .calendar-grid { display:grid; grid-template-columns: repeat(7, 1fr); gap:.5rem; }
+        .calendar-day { background: rgba(255, 255, 255, 0.95); border:1px solid #e8f4fd; border-radius:12px; min-height:110px; padding:.5rem; position:relative; }
+        .calendar-day.other { opacity:.5; }
+        .calendar-day .date { font-weight:700; color:#667eea; }
+        .event-badge { display:block; margin-top:.25rem; font-size:.8rem; background:#f0f7ff; border:1px solid #e8f4fd; color:#2c3e50; padding:.15rem .35rem; border-radius:8px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; }
+        .calendar-actions { margin-top:1rem; display:flex; gap:.5rem; }
+        .calendar-legend { margin-top:1rem; color:#6c757d; font-size:.9rem; }
+        .modal { position:fixed; inset:0; background:rgba(0,0,0,.5); display:none; align-items:center; justify-content:center; z-index:10000; }
+        .modal.show { display:flex; }
+        .modal-card { background:white; padding:1.5rem; border-radius:16px; max-width:420px; width:90%; box-shadow:0 20px 60px rgba(0,0,0,.3); }
+        .modal-card h3 { margin-bottom:1rem; }
+        .modal-card .form-group { margin-bottom:1rem; }
+        .calendar-topbar { display:flex; align-items:center; justify-content:space-between; margin-top:1rem; }
+    </style>
+</head>
+<body>
+    <div class="calendar-wrapper">
+        <a href="index.html" class="btn-secondary" style="text-decoration:none; padding:.5rem .75rem; display:inline-block;">← Volver</a>
+        <div class="calendar-topbar">
+            <h2>Calendario Académico</h2>
+            <div class="calendar-controls">
+                <button class="btn-secondary" id="prevMonth">Anterior</button>
+                <button class="btn-primary" id="todayBtn">Hoy</button>
+                <button class="btn-secondary" id="nextMonth">Siguiente</button>
+            </div>
+        </div>
+        <div id="calendarMeta" style="margin:.5rem 0; color:#6c757d;"></div>
+        <div class="calendar-grid" id="calendarGrid"></div>
+        <div class="calendar-legend">Haz clic en un día para agregar o ver eventos (exámenes, entregas, etc.).</div>
+    </div>
+
+    <div class="modal" id="eventModal">
+        <div class="modal-card">
+            <h3 id="modalTitle"></h3>
+            <div class="form-group">
+                <label for="eventTitle">Título</label>
+                <input id="eventTitle" type="text" placeholder="Ej. Examen de Matemática" style="width:100%; padding:.75rem; border:2px solid #e8f4fd; border-radius:8px;">
+            </div>
+            <div class="form-group">
+                <label for="eventNotes">Notas</label>
+                <textarea id="eventNotes" rows="4" placeholder="Detalles importantes" style="width:100%; padding:.75rem; border:2px solid #e8f4fd; border-radius:8px;"></textarea>
+            </div>
+            <div style="display:flex; gap:.5rem; justify-content:flex-end;">
+                <button class="btn-secondary" id="deleteEvent">Eliminar</button>
+                <button class="btn-primary" id="saveEvent">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="calendar.js"></script>
+</body>
+</html>
+
+
